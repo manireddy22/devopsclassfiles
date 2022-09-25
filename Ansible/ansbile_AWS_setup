@@ -12,3 +12,16 @@ Create inventory.txt file and add ip address of the target machines as per under
 
 ansible-target-1 ansible_host=44.208.34.85 ansible_connection=ssh ansible_user=ubuntu
 
+---------------------------------------------------------------------
+Command ;  ansible ansible-target-1 -m ping -i inventory.txt
+----------------------------------------------------------------------
+so here problem, we need key here and not assinged to ssh agent , so need to add ssh agent
+---------------------------------
+Command : 1) ssh-agent bash
+          2) cp MANIPAL_SCALENE.pem ~/.ssh/
+          3) ssh-add ~/.ssh/MANIPAL_SCALENE.pem
+Command ;  ansible ansible-target-1 -m ping -i inventory.txt
+
+sucessfully connected !
+
+
